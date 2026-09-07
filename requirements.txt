@@ -1,0 +1,19 @@
+# Pinned to the versions used in the notebook (Colab A100, torch 2.3.1 + CUDA 12.1).
+# For a CPU/T4 install, use the standard torch wheel:
+#   pip install torch==2.3.1 torchvision==0.18.1
+# For the Colab CUDA 12.1 wheel, use:
+#   pip install torch==2.3.1 torchvision==0.18.1 --extra-index-url https://download.pytorch.org/whl/cu121
+
+torch==2.3.1
+torchvision==0.18.1
+numpy==2.0.0
+pandas==2.2.2
+scikit-learn==1.5.0
+scapy==2.5.0
+einops==0.8.0
+tqdm==4.66.4
+matplotlib==3.9.0
+seaborn==0.13.2
+kaggle==1.6.14
+xlstm==1.0.7
+pyyaml>=6.0

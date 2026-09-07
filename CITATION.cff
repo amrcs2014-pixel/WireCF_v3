@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "WireCF v3 — Wire-Valid Counterfactual Flows for Encrypted Traffic Classifiers"
+authors:
+  - family-names: "Abdelhaliem"
+    given-names: "Amr H."
+    affiliation: "Irbid National University, Jordan"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+version: "3.0.0"
+date-released: "2025-01-01"
+license: MIT
+repository-code: "https://github.com/amrogomma-web/wirecf-v3"
+keywords:
+  - encrypted traffic classification
+  - counterfactual explanations
+  - explainable AI
+  - cybersecurity
+  - deep learning
+preferred-citation:
+  type: article
+  title: "WireCF: Wire-Valid Counterfactual Explanations for Encrypted Traffic Classifiers"
+  authors:
+    - family-names: "Abdelhaliem"
+      given-names: "Amr H."
+  journal: "IEEE Transactions on Information Forensics and Security"
+  year: 2025
+  notes: "Submitted"
