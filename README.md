@@ -2,28 +2,6 @@
 
 Publication-grade implementation of a counterfactual-explanations framework for encrypted-traffic classifiers, with parameter-matched Transformer / Mamba / xLSTM backbones, masked-byte pretraining, wire-valid DDPM-based counterfactuals, Integrated-Gradients causal-faithfulness scoring, and an end-to-end honesty contract with per-stage convergence gates.
 
-**Target venue:** IEEE TIFS / IEEE TNSM (Q1).
-
----
-
-## The honesty contract
-
-The v2 run of this pipeline had six silent failure modes that could have produced a fabricated "positive" paper. v3 fixes each one with a loud, gated check.
-
-| Problem in v2 | Fix in v3 |
-|---|---|
-| ISCXVPN2016 Kaggle 404 → silent synthetic fallback | Multi-mirror fallback chain + hard assertion against synthetic in final reports |
-| Parameter mismatch (5M, 4M, 1M instead of 28M each) | Auto parameter-matching loop — bisect (dim, depth) per backbone until 28M ± 7% |
-| No pretraining → models stuck at majority class | Real masked-byte pretraining stage |
-| 5 epochs / 2000 flows insufficient | 20 fine-tune epochs on full datasets, batch 64 (A100) |
-| CFS used a uniform-attention placeholder | Real gradient-based saliency (Integrated Gradients) |
-| Pre-registration logic mis-flagged degenerate models as "robust" | Convergence gate: if val_acc < 1.5 × majority baseline, hypotheses are marked "uninterpretable" not "supported" |
-| No convergence checks between stages | Each stage asserts the previous stage's output is non-degenerate |
-| No defense against silent failure modes | Loud assertions everywhere, with clear remediation messages |
-
-If any stage fails its gate, the final report marks dependent hypotheses as **uninterpretable due to upstream failure** rather than reporting them as supported.
-
----
 
 ## Repository layout
 
